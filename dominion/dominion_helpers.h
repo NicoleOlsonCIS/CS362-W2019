@@ -12,4 +12,10 @@ int getCost(int cardNumber);
 int cardEffect(int card, int choice1, int choice2, int choice3, 
 	       struct gameState *state, int handPos, int *bonus);
 
+int FeastAction(struct gameState * state, int currentPlayer, int  temphand[500], int choice1);
+
+int CouncilRoomAction(int currentPlayer, struct gameState * state, int handPos);
+
+int SalvagerAction(struct gameState * state, int choice1, int currentPlayer, int handPos);
+
 #endif
