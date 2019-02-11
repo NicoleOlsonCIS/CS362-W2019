@@ -100,8 +100,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\dominion\dominion.c" />
     <ClCompile Include="..\..\dominion\interface.c" />
-    <ClCompile Include="..\..\dominion\playdom.c" />
     <ClCompile Include="..\..\dominion\rngs.c" />
+    <ClCompile Include="unittest4.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\dominion\dominion.h" />
