@@ -26,5 +26,5 @@ unittestresults: dominion.o
 
 clean:
 	rm *.o
-	rm *.gcov
+	rm *.g*
 	rm *.out
