@@ -17,9 +17,9 @@
 //
 //
 #include <stdio.h>
-#include "..\..\dominion\dominion.h"
-#include "..\..\dominion\dominion_helpers.h"
-#include "..\..\dominion\rngs.h"
+#include "../../dominion\dominion.h"
+#include "../../dominion\dominion_helpers.h"
+#include "../../dominion\rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
