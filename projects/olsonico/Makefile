@@ -28,5 +28,5 @@ clean:
 	rm *.o
 	rm *.g*
 	rm *.out
-	rm ../../*.o
-	rm ../../*.g*
+	rm ../../dominion/*.o
+	rm ../../dominion/*.g*
