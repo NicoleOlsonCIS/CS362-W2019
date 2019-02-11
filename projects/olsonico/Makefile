@@ -1,8 +1,8 @@
 rngs.o:
-	gcc -c ../../dominion/rngs.c -g -Wall -fpic -coverage -lm -std=c99
+	gcc -c ../../dominion/rngs.c -g -o ../../rngs.o -Wall -fpic -coverage -lm -std=c99
 
 dominion.o: rngs.o
-	gcc -c ../../dominion/dominion.c -g -Wall -fpic -coverage -lm -std=c99
+	gcc -c ../../dominion/dominion.c -g -o ../../dominion.o -Wall -fpic -coverage -lm -std=c99
 
 unittestresults: dominion.o
 	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest1 -g unittest1.c ../../dominion.o ../../rngs.o
