@@ -21,13 +21,10 @@ unittestresults: dominion.o
 	./cardtest2 >> unittestresult.out
 	./cardtest3 >> unittestresult.out
 	./cardtest4 >> unittestresult.out
-	gcov -b ../../domionion/dominion.c >> unittestresult.out
-	copy ../../*.gcov ./
+	gcov -b ../../dominion/dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
 clean:
 	rm *.o
 	rm *.g*
-	rm ../../dominion/*.o
-	rm ../../dominion/*.g*
 	rm *.out
