@@ -1,0 +1,32 @@
+rngs.o:
+	gcc -c ../../dominion/rngs.c -g -o ../../dominion/rngs.o -Wall -fpic -coverage -lm -std=c99
+
+dominion.o: rngs.o
+	gcc -c ../../dominion/dominion.c -g -o ../../dominion/dominion.o -Wall -fpic -coverage -lm -std=c99
+
+unittestresults: dominion.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest1 -g unittest1.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest2 -g unittest2.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest3 -g unittest3.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest4 -g unittest4.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest1 -g cardtest1.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest2 -g cardtest2.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest3 -g cardtest3.c ../../dominion/dominion.o ../../dominion/rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest4 -g cardtest4.c ../../dominion/dominion.o ../../dominion/rngs.o
+	./unittest1 &> unittestresult.out
+	./unittest2 >> unittestresult.out
+	./unittest3 >> unittestresult.out
+	./unittest4 >> unittestresult.out
+	./cardtest1 >> unittestresult.out
+	./cardtest2 >> unittestresult.out
+	./cardtest3 >> unittestresult.out
+	./cardtest4 >> unittestresult.out
+	gcov -b ../../dominion/dominion.c >> unittestresult.out
+	cat dominion.c.gcov >> unittestresult.out
+
+clean:
+	rm *.o
+	rm *.g*
+	rm *.out
+	rm ../../dominion/*.o
+	rm ../../dominion/*.g*
