@@ -17,39 +17,39 @@
 
 enum CARD
   {curse = 0,
-   estate,
-   duchy,
-   province,
+   estate, // 1
+   duchy, // 2
+   province, // 3
 
-   copper,
-   silver,
-   gold,
+   copper, // 4
+   silver, // 5
+   gold, // 6
 
-   adventurer,
+   adventurer, // 7
    /* If no/only 1 treasure found, stop when full deck seen */
-   council_room,
-   feast, /* choice1 is supply # of card gained) */
-   gardens,
+   council_room, // 8
+   feast, /* choice1 is supply # of card gained) */ //9
+   gardens, // 10
    mine, /* choice1 is hand# of money to trash, choice2 is supply# of
-	    money to put in hand */
-   remodel, /* choice1 is hand# of card to remodel, choice2 is supply# */
-   smithy,
-   village,
+	    money to put in hand */ // 11
+   remodel, /* choice1 is hand# of card to remodel, choice2 is supply# */ //12
+   smithy, // 13
+   village, // 14
 
-   baron, /* choice1: boolean for discard of estate */
+   baron, /* choice1: boolean for discard of estate */ // 15
    /* Discard is always of first (lowest index) estate */
-   great_hall,
-   minion, /* choice1:  1 = +2 coin, 2 = redraw */
-   steward, /* choice1: 1 = +2 card, 2 = +2 coin, 3 = trash 2 (choice2,3) */
-   tribute,
+   great_hall, // 16
+   minion, /* choice1:  1 = +2 coin, 2 = redraw */ // 17
+   steward, /* choice1: 1 = +2 card, 2 = +2 coin, 3 = trash 2 (choice2,3) */ // 18
+   tribute, // 19
 
-   ambassador, /* choice1 = hand#, choice2 = number to return to supply */
-   cutpurse,
-   embargo, /* choice1 = supply# */
-   outpost,
-   salvager, /* choice1 = hand# to trash */
-   sea_hag,
-   treasure_map
+   ambassador, /* choice1 = hand#, choice2 = number to return to supply */ // 20
+   cutpurse, // 21
+   embargo, /* choice1 = supply# */ // 22
+   outpost, // 23
+   salvager, /* choice1 = hand# to trash */ // 24
+   sea_hag, // 25
+   treasure_map // 26
   };
 
 struct gameState {
