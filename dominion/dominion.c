@@ -1197,7 +1197,7 @@ int SalvagerAction(struct gameState * state, int choice1, int currentPlayer, int
 
     if (choice1)
     {
-        //gain coins equal to trashed card
+        //gain coins equal to trashed card // NOTE BUG-- = instead of +=
         state->coins = getCost(handCard(choice1, state));
         //trash card
         discardCard(choice1, currentPlayer, state, 1);
@@ -1224,6 +1224,7 @@ int AdventurerAction(struct gameState* state, int currentPlayer, int* temphand)
     int cardDrawn;
     int drawntreasure = 0;
     int z = 0;
+
     while (drawntreasure < 5) {
         if (state->deckCount[currentPlayer] < 1) {//if the deck is empty we need to shuffle discard and add to deck
             shuffle(currentPlayer, state);
