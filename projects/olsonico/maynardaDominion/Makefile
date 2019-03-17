@@ -60,8 +60,32 @@ runtests: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 
 	./randomtest1 &>> unittestresult.out
 	./randomtest2 &>> unittestresult.out
 	./randomtestadventurer &>> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+
+codecoverageass5: dominion.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest1 -g unittest1.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest2 -g unittest2.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest3 -g unittest3.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o unittest4 -g unittest4.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest1 -g cardtest1.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest2 -g cardtest2.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest3 -g cardtest3.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o cardtest4 -g cardtest4.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o randomtest1 -g randomtest1.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o randomtest2 -g randomtest2.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -lm -std=c99 -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o
+	./unittest1 &> codecoverageass5.out
+	./unittest2 >> codecoverageass5.out
+	./unittest3 >> codecoverageass5.out
+	./unittest4 >> codecoverageass5.out
+	./cardtest1 >> codecoverageass5.out
+	./cardtest2 >> codecoverageass5.out
+	./cardtest3 >> codecoverageass5.out
+	./cardtest4 >> codecoverageass5.out
+	./randomtest1 >> codecoverageass5.out
+	./randomtest2 >> codecoverageass5.out
+	./randomtestadventurer >> codecoverageass5.out
+	gcov -b dominion.c >> codecoverageass5.out
+	cat dominion.c.gcov >> codecoverageass5.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
