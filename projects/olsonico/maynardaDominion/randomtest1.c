@@ -167,7 +167,9 @@ int main(int argc, char** argv)
 	for (y = 0; y < 10; y++)
 	{
 		// current player is 0 and hand position of salvager is 0
-		int ta = SalvagerAction(&games[y].post, games[y].choice1, games[y].pre.whoseTurn, 0);
+		// int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+		int ta = cardEffect(24, games[y].choice1, 0, 0, &games[y].post, 0, 0);
+		//int ta = SalvagerAction(&games[y].post, games[y].choice1, games[y].pre.whoseTurn, 0);
 	}
 
 	// 4 TESTS
@@ -217,7 +219,10 @@ int main(int argc, char** argv)
 
 			// if pass
 			if (r1) { t1 = t1 | 0; }
-			else { t1 = t1 | 1; }
+			else 
+			{
+				t1 = t1 | 1; 
+			}
 		}
 
 		// TEST t2: testing that salvager card is removed

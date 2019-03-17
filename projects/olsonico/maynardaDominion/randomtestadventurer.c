@@ -118,7 +118,7 @@ int main(int argc, char** argv)
 		gV.pre = gameArr[p];
 		gV.post = gameArr[p];
 		gV.pre.handCount[0] = 5;
-		gV.curPlayer = currPlayerArr[p];
+		gV.curPlayer = 1;
 
 		// add game struct to array
 		games[p] = gV;
@@ -129,7 +129,8 @@ int main(int argc, char** argv)
 	// call Adventurer
 	for (f = 0; f < 10; f++)
 	{
-		int ta = AdventurerAction(&games[f].post, games[f].curPlayer - 1, temphand);
+		games[f].post.whoseTurn = 1;
+		int ta = adventurerCard(&games[f].post);
 	}
 
 	// 1 TEST
@@ -142,7 +143,7 @@ int main(int argc, char** argv)
 		int idx = 0;
 		int count = 0;
 		int count2 = 0;
-		int player = games[gg].curPlayer - 1;
+		int player = 1;
 
 		// count the coins in the pre call state
 		for (idx = 0; idx < games[gg].pre.handCount[player]; idx++)

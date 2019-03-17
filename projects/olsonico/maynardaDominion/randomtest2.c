@@ -185,7 +185,8 @@ int main(int argc, char** argv)
 	for (y = 0; y < 10; y++)
 	{
 		// current player is 0 and hand position of salvager is 0
-		int ta = SmithyAction(games[y].pre.whoseTurn, &games[y].post, games[y].placeInHand);
+		//int ta = SmithyAction(games[y].pre.whoseTurn, &games[y].post, games[y].placeInHand);
+		int ta = smithCard(&games[y].post, games[y].placeInHand);
 	}
 
 	// 2 TESTS
@@ -221,7 +222,7 @@ int main(int argc, char** argv)
 
 			// if that's not the difference (return 0)
 			if (!r2)
-				t2 = t2 | r2;
+				t2 = t2 | 1;
 		}
 		if (!r1)
 		{
@@ -229,7 +230,7 @@ int main(int argc, char** argv)
 
 			// if that's not the difference (return 0)
 			if (!r2)
-				t2 = t2 | r2;
+				t2 = t2 | 1;
 		}
 	}
 
