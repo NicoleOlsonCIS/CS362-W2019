@@ -1,0 +1,7 @@
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\src\DomainValidator.java
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\src\InetAddressValidator.java
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\src\RegexValidator.java
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\src\ResultPair.java
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\src\UrlValidator.java
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\test\teststruct.java
+c:\depot\Group-FinalProject-B\URLValidatorInCorrect\test\UrlValidatorTest.java
